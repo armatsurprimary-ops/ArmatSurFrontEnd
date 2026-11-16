@@ -1,0 +1,11 @@
+{
+  "name": "armat-sur-session-runner",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "26.1.0"
+  }
+}

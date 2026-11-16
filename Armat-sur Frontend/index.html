@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armat-sur — Session Runner</title>
+<link id="appIcon" rel="icon" type="image/png" href="assets/journal/example-games.png">
+<script src="js/theme.js?v=20261001-book-icon"></script>
+  <link rel="stylesheet" href="css/style.css?v=20261014-compaction">
+</head>
+<body>
+<header id="topbar">
+  <div class="theme-switch" role="group" aria-label="Appearance">
+    <button id="themeDay" type="button" aria-pressed="true" title="Day: parchment journal"><span class="celestial sun" aria-hidden="true"></span> Day</button>
+    <button id="themeNight" type="button" aria-pressed="false" title="Night: charcoal and gold"><span class="celestial moon" aria-hidden="true"></span> Night</button>
+  </div>
+  <div class="top-status">
+    <span id="connDot" class="dot unknown"></span>
+    <span id="connText" class="conn-text">no key</span>
+    <span id="sessionLabel" class="session-label"></span>
+    <span id="modelLabel" class="model-label"></span>
+    <span class="cost-controls">
+      <span id="reqMaxCost" class="cost-stat" title="Estimated next GM request cost at current model rates: current context plus the full max-tokens reply budget. An estimate, not a spending cap. Shows $? until model pricing is known (fetch the list in Settings).">Req $?</span>
+      <span id="chainMaxCost" class="cost-stat" title="Estimated chain budget: the current GM request estimate times (1 + max consecutive AI turns). Assumes the same context and GM rates each time; context growth, character model rates, tool continuations and retries can change the cost. Not a spending cap.">Chain $?</span>
+      <span id="sessionSpend" class="cost-spend" title="Cumulative recorded cost for this saved session across all models and API services. Persists through stops, reloads and session saves. Uses provider-reported charges when available, otherwise usage and model pricing; charges without cost or usage data are not included.">Total $0.00</span>
+    </span>
+  </div>
+  <div class="top-actions">
+    <button id="btnSessions" class="btn ghost">Sessions</button>
+    <button id="btnImport" class="btn ghost">Import</button>
+    <button id="btnExport" class="btn ghost">Export</button>
+    <button id="btnSettings" class="btn">Settings</button>
+  </div>
+</header>
+
+<div id="layout">
+  <aside id="sidebar">
+    <div class="side-title">Branches</div>
+    <ul id="branchList"></ul>
+    <button id="btnNewBranch" class="btn block">+ New Character</button>
+    <div class="side-hint">Main is the public story & world record (GM narration everyone sees). Play happens in the private branches — the GM's full context is assembled from all of them at generation time. The "user" branch is your own private line to the GM.</div>
+  </aside>
+  <main id="main">
+    <div id="branchHeader"></div>
+    <div id="messages"></div>
+    <div id="composer"></div>
+  </main>
+  <aside id="characterPanel" aria-label="Current character card" hidden></aside>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+<input type="file" id="fileImport" accept=".json,application/json" hidden>
+<input type="file" id="fileRulebook" accept=".txt,text/plain" hidden>
+
+<script src="js/diag.js"></script>
+<script src="js/store.js?v=20261014-compaction"></script>
+<script src="js/sound.js?v=20261001-recorded-page-flip"></script>
+<script src="js/attachments.js?v=20261001-image-cost-estimates"></script>
+<script src="js/prompts.js?v=20261014-compaction"></script>
+<script src="js/api.js?v=20261001-session-delete"></script>
+<script src="js/tools.js"></script>
+<!-- TOOLS: add new tools by dropping a .js file into js/tools/ and adding one script tag here.
+     Each tool file must call App.tools.register({ name, description, parameters, audience, run }).
+     See js/tools.js for the contract. -->
+<script src="js/tools/roll_resolver.js?v=20261001-expression-rolls"></script>
+<script src="js/tools/character_creator.js"></script>
+<script src="js/tools/whisper.js?v=20261001-prompt-consistency"></script>
+<script src="js/tools/bookkeep.js"></script>
+<script src="js/compaction.js?v=20261014-compaction"></script>
+<script src="js/ui.js?v=20261014-compaction"></script>
+<script src="js/app.js?v=20261014-compaction"></script>
+</body>
+</html>
