@@ -3,7 +3,7 @@ A front end for Armat-Sur, an 18+ AI driven RPG. The front end manages context a
 
 **NOTE: Due to the adult content in the game it is not recommended to use GPT or Claude. As of release deepseek 4.1 flash 1017 is the most suitable model for capability and cost and should be treated as a baseline.**
 
-The rule book itself can be found at https://armatsurprimary-ops.itch.io/armat-sur, separated from this repository due to containing explicit imagery
+The rule book itself can be found at https://armatsurprimary-ops.itch.io/armat-sur, separated from this repository due to containing explicit imagery.
 # How to use
 1. Install Python 3.10 or newer if it is not already available.
 2. On Windows, open **Armat-sur Frontend** and double-click **start-armatsur.bat**.
