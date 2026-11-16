@@ -2,6 +2,8 @@
 A front end for Armat-Sur, an 18+ AI driven RPG. The front end manages context and prevents NPC's and the player from writing to world state directly, instead a globally aware GM arbitrates character intentions with the setting's rule book to control outcomes. This is done to address the lack of concreteness inherit to free-form AI roleplay as found in Silly Tavern and other projects.
 
 **NOTE: Due to the adult content in the game it is not recommended to use GPT or Claude. As of release deepseek 4.1 flash 1017 is the most suitable model for capability and cost and should be treated as a baseline.**
+
+The rule book itself can be found at https://armatsurprimary-ops.itch.io/armat-sur, separated from this repository due to containing explicit imagery
 # How to use
 1. Install Python 3.10 or newer if it is not already available.
 2. On Windows, open **Armat-sur Frontend** and double-click **start-armatsur.bat**.
